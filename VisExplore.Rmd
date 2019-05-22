@@ -16,16 +16,11 @@ library(readr)
 data <- read.csv(file="C:/Users/fuses/Downloads/institution_data_R.csv",header = TRUE)
 head(data)
 
-#install.packages("tidyverse")
-#install.packages("gcookbook")
-#install.packages("MASS")
-#install.packages("ggplot2")
-#install.packages("dplyr")
+plot_platform <- data %>%
+   ggplot(aes(fill = "blue", color = "orange")
 
-
-
-grad <- ggplot(data = data, aes(x=grad_rate)) +
-               geom_histogram(binwidth = 0.025, bins = 20, fill = "blue", color = "orange")+
+grad <- plot_platform +
+               geom_histogram(aes(x=grad_rate), binwidth = 0.025, bins = 20)+
                labs(x="Graduation Rate")+
                theme_light()
 
