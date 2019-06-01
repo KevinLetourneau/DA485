@@ -24,8 +24,6 @@ grad <- ggplot(data = data, aes(x=grad_rate)) +
                labs(x="Graduation Rate")+
                theme_light()
 
-grad
-
 
 
 endow <- ggplot(data = data, aes(x=endow_value)) +
@@ -34,16 +32,12 @@ endow <- ggplot(data = data, aes(x=endow_value)) +
                 xlim(0,40000)+
                 theme_light()
 
-endow
-
 
 
 student <- ggplot(data = data, aes(x=student_count)) +
                   geom_histogram(bins = 20, fill = "blue", color = "orange")+
                   labs(x="Student Count")+
                   theme_light()
-
-student
 
 
 
@@ -52,8 +46,6 @@ spending <- ggplot(data = data, aes(x=spending_per_award)) +
                    labs(x="Spending Per Award")+
                    theme_light()
 
-spending
-
 
 
 cowplot::plot_grid(grad,endow,student,spending,
@@ -61,6 +53,7 @@ cowplot::plot_grid(grad,endow,student,spending,
                    label_size = 18,
                    align = "hv")
 ```
+
 A: Grad_rate has a strong bell shape curve with high center near its mean with a very even spread. This seems to have a normal distribution. From our SD we can see that we have 4 outliers on our lower threshold below 0.056, and we have 5 outliers on the upper threshold above 0.343.
 
 B: Endow_value has a large positive skew above our threshold shifting the center and mean well to the left side of this distribution making for a very long right tail. The spread is very uneven due to the skew. This is not a normal distribution. We can see that we likely have some extreme outliers on the high end of the distribution. This variable also has a significantly high variance meaning we have a large spread for our data. From our SD we can see that we have 0 outliers on our lower threshold below -33,686.836, and we have 7 outliers on the upper threshold above 47,391.595.
@@ -75,23 +68,17 @@ fullpct <- ggplot(data = data, aes(x=full_time_pct)) +
                   labs(x="Fulltime Student Percentage")+
                   theme_light()
 
-fullpct
-
 
 fullcount <- ggplot(data = data, aes(x=full_time_count)) +
                     geom_histogram(bins = 20, fill = "blue", color = "orange")+
                     labs(x="Fulltime Student Count")+
                     theme_light()
 
-fullcount
-
 
 medsat <- ggplot(data = data, aes(x=med_sat_value)) +
                  geom_histogram(bins = 20, fill = "blue", color = "orange")+
                  labs(x="Median SAT Score")+
                  theme_light()
-
-medsat
 
 
 
@@ -100,14 +87,13 @@ aid <- ggplot(data = data, aes(x=aid_value)) +
               labs(x="Aid Value")+
               theme_light()
 
-aid
-
 
 cowplot::plot_grid(fullpct, fullcount, medsat, aid,
                    labels = "AUTO",
                    label_size = 18,
                    align = "hv")
 ```
+
 A: Full_time_pct has a negative skew just below our threshold shifting the center and mean to the right side of this distribution making for a long left tail. While it is below our threshold the spread is very uneven due to the skew. This is not a normal distribution. From our SD we can see that we have 1 outlier on our lower threshold below 0.201, and we have 0 outliers on the upper threshold above 1.291 as it is above 100%.
 
 B: Full_time_count has a large positive skew above our threshold shifting the center and mean well to the left side of this distribution making for a very long right tail. The spread is very uneven due to the skew. This is not a normal distribution. This variable also has a significantly high variance meaning we have a large spread for our data. From our SD we can see that we have 0 outliers on our lower threshold below -14198.547, and we have 9 outliers on the upper threshold above 30453.925.
@@ -123,16 +109,12 @@ gradtime <- ggplot(data = data, aes(x=grad_on_time_pct)) +
                    labs(x="Graduating on Time")+
                    theme_light()
 
-gradtime
-
 
 
 pell <- ggplot(data = data, aes(x=pell_value)) +
                geom_histogram(bins = 20, fill = "blue", color = "orange")+
                labs(x="Pell Value")+
                theme_light()
-
-pell
 
 
 
@@ -141,8 +123,6 @@ fresh <- ggplot(data = data, aes(x=fresh_retain_value)) +
                 labs(x="Freshman Retainment")+
                 theme_light()
 
-fresh
-
 
 
 fullfac <- ggplot(data = data, aes(x=full_time_fac_pct)) +
@@ -150,14 +130,13 @@ fullfac <- ggplot(data = data, aes(x=full_time_fac_pct)) +
                   labs(x="Full Time Faculty")+
                   theme_light()
 
-fullfac
-
 
 cowplot::plot_grid(gradtime, pell, fresh, fullfac,
                    labels = "AUTO",
                    label_size = 18,
                    align = "hv")
 ```
+
 A: Grad_on_time_pct has a large positive skew above our threshold shifting the center and mean well to the left side of this distribution making for a very long right tail. The spread is very uneven due to the skew. This is not a normal distribution. From our SD we can see that we have 0 outliers on our lower threshold below -.26, and we have 6 outliers on the upper threshold above 0.675.
 
 B: Pell_Value is a near normal distribution with a decent bell shaped curve with some outliers on the higher end of the range around 0.8-1.0 that causes the range to be increased. There is a slight positive skewness however, it is not above or below our skew threshold of (-1.0, 1.0) therefor we will maintain that it is a near normal distribution with a high center near its mean and fairly even spread from its mean. From our SD we can see that we have 0 outliers on our lower threshold below 0.014, and we have 4 outliers on the upper threshold above 0.794.
@@ -173,15 +152,11 @@ endowspend <- ggplot(data = data, aes(x=EndowXSpend)) +
                      xlim(0,1000000000)+
                      theme_light()
 
-endowspend
-
 
 
 pellsat <- ggplot(data = data, aes(x=PellXSat)) +
                   geom_histogram(bins = 20, fill = "blue", color = "orange")+
                   theme_light()
-
-pellsat
 
 
 
@@ -189,15 +164,11 @@ retainsat <- ggplot(data = data, aes(x=RetainXSat)) +
                     geom_histogram(bins = 20, fill = "blue", color = "orange")+
                     theme_light()
 
-retainsat 
-
 
 
 aidsat <- ggplot(data = data, aes(x=AidXSat)) +
                  geom_histogram(bins = 20, fill = "blue", color = "orange")+
                  theme_light()
-
-aidsat
 
 
 cowplot::plot_grid(endowspend, pellsat, retainsat, aidsat,
@@ -205,6 +176,7 @@ cowplot::plot_grid(endowspend, pellsat, retainsat, aidsat,
                    label_size = 18,
                    align = "hv")
 ```
+
 A: EndowXSpending has a large positive skew above our threshold shifting the center and mean well to the left side of this distribution making for a very long right tail. The spread is very uneven due to the skew. This is not a normal distribution. This variable also has a significantly high variance meaning we have a large spread for our data. From our SD we can see that we have 0 outliers on our lower threshold below -3,850,369,898, and we have 10 outliers on the upper threshold above 4,869,272,108.
 
 B: PellXSat has a strong bell shape curve with high center near its mean with a very even spread however, there are some possible outliers on the high end of the spectrum causing the range of the histogram to be increased. There is also a slight skew, but not above our threshold. Overall this does not seem to effect the distribution. From our SD we can see that we have 0 outliers on our lower threshold below 61.134, and we have 6 outliers on the upper threshold above 750.67.
@@ -222,4 +194,5 @@ aidendow <- ggplot(data = data, aes(x=AidXEndow)) +
 
 aidendow
 ```
+
 A: AidXEndow has a large positive skew above our threshold shifting the center and mean well to the left side of this distribution making for a very long right tail. The spread is very uneven due to the skew. This is not a normal distribution. This variable also has a significantly high variance meaning we have a large spread for our data. We can see from out SD that we have 0 lower outliers on our lower threshold below -357,016,265.2, we do have 8 outliers at our upper threshold of 460,124,632.4.
