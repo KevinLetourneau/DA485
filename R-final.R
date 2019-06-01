@@ -10,8 +10,6 @@ install.packages("usethis")
 
 library(ggplot2)
 library(dplyr)
-library(usethis)
-use_git_config(user.name = "KevinLetourneau", user.email = "kevin.letourneau@outlook.com")
 
 
 
